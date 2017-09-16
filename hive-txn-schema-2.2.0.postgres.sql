@@ -40,7 +40,7 @@ CREATE TABLE TXN_COMPONENTS (
 CREATE TABLE COMPLETED_TXN_COMPONENTS (
   CTC_TXNID bigint,
   CTC_DATABASE varchar(128) NOT NULL,
-  CTC_TABLE varchar(128),
+  CTC_TABLE varchar(256),
   CTC_PARTITION varchar(767)
 );
 
@@ -129,8 +129,3 @@ CREATE TABLE WRITE_SET (
   WS_COMMIT_ID bigint NOT NULL,
   WS_OPERATION_TYPE char(1) NOT NULL
 );
-
--- -----------------------------------------------------------------
--- Record schema version. Should be the last step in the init script
--- -----------------------------------------------------------------
-INSERT INTO "VERSION" ("VER_ID", "SCHEMA_VERSION", "VERSION_COMMENT") VALUES (1, '2.1.0', 'Hive release version 2.1.0');
